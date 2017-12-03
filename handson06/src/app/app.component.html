@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <li *ngFor="let todo of todoList; let i = index" style="display: flex">
+      <app-todo [index]="i"></app-todo>
+      <button style="margin: 0 0 0 5px" (click)="onClickDeleteButtonHandler($event, i)">削除</button>
+    </li>
+  </ul>
+  <input type="text" #inputTitle (keyup)="onChangeHandler($event, inputTitle.value)" [value]="title"/>
+  <button (click)="onClickAddButtonHandler($event)">追加</button>
+</div>
